@@ -1,11 +1,19 @@
 {
-  "name": "backend",
+  "name": "chai-backend",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smitsavaliya74/chai-backend.git"
+  },
   "author": "smit savaliya",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smitsavaliya74/chai-backend/issues"
+  },
+  "homepage": "https://github.com/smitsavaliya74/chai-backend#readme",
   "description": ""
 }
