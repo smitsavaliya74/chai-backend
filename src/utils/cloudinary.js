@@ -24,9 +24,29 @@ import fs from "fs"; // file system for open delete and for file related anythin
         fs.unlinkSync(localFilePath) // remove the locally saved temporary file as the upload operation got failed
         return null;
     }
-}
+};
+
+const deleteFromCloudinary = async (imageUrl) => {
+    try {
+        if (!imageUrl) return null;
+
+        const urlParts = imageUrl.split("/");
+
+        const fileName = urlParts[urlParts.length - 1];
+        const folderName = urlParts[urlParts.length - 2];
+
+        const publicId =
+            `${folderName}/${fileName.split(".")[0]}`;
+
+        return await cloudinary.uploader.destroy(publicId);
+
+    } catch (error) {
+        console.log("Cloudinary delete error:", error);
+        return null;
+    }
+};
 
 
 
-export {uploadOnCloudinary}
+export {uploadOnCloudinary,deleteFromCloudinary}
 
