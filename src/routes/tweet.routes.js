@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
-import { 
+import {
     createTweet,
     getUserTweets,
     updateTweet,
@@ -19,8 +19,7 @@ router.route("/").post(createTweet);
 router.route("/user/:userId").get(getUserTweets);
 
 // Route to update/delete specific tweet
-router.route("/:tweetId")
-    .patch(updateTweet)
-    .delete(deleteTweet);
+router.route("/:tweetId").patch(updateTweet);
+router.route("/:tweetId").delete(deleteTweet);
 
 export default router;

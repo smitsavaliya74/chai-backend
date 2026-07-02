@@ -19,10 +19,9 @@ router.use(verifyJWT);
 router.route("/").post(createPlaylist);
 
 // Route to handle specific playlist details (GET: details, PATCH: update, DELETE: delete)
-router.route("/:playlistId")
-    .get(getPlaylistById)
-    .patch(updatePlaylist)
-    .delete(deletePlaylist);
+router.route("/:playlistId").get(getPlaylistById);
+router.route("/:playlistId").patch(updatePlaylist);
+router.route("/:playlistId").delete(deletePlaylist);
 
 // Route to add a video to a specific playlist
 router.route("/add/:videoId/:playlistId").patch(addVideoToPlaylist);

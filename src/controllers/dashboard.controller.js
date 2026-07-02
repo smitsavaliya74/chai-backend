@@ -20,7 +20,6 @@ const getChannelStats = asyncHandler(async (req, res) => {
             }
         },
         {
-            // Group and calculate sum of views and total video count
             $group: {
                 _id: null,
                 totalViews: {

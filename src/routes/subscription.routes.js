@@ -14,9 +14,8 @@ router.use(verifyJWT);
 // Routes for a channel
 // GET: Fetch subscriber list
 // POST: Toggle subscription (Subscribe/Unsubscribe)
-router.route("/c/:channelId")
-    .get(getUserChannelSubscribers)
-    .post(toggleSubscription);
+router.route("/c/:channelId").get(getUserChannelSubscribers);
+router.route("/c/:channelId").post(toggleSubscription);
 
 // Route for getting a subscriber's subscription list
 // GET: Fetch channel list
